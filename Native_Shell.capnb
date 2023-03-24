@@ -1,0 +1,32 @@
+[
+    {
+        "kind": 1,
+        "language": "markdown",
+        "value": "<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\n.alert {\n  padding: 20px;\n  color: var(--theme-error-foreground);\n  background-color: var(--theme-error-background);\n  max-width: 65em;\n  width: 92%;\n}\n.alert.info {\n  color: var(--theme-info-foreground);\n  background-color: var(--theme-info-background);\n}\n.alert.warning {\n  color: var(--theme-warning-foreground);\n  background-color: var(--theme-warning-background);\n}\n.closebtn {\n  margin-left: 15px;\n  color: white;\n  font-weight: bold;\n  float: right;\n  font-size: 22px;\n  line-height: 20px;\n  cursor: pointer;\n  transition: 0.3s;\n}\n.closebtn:hover {\n  color: black;\n}\n</style>\n</head>\n<h1 style=\"font-size:50px\">CAP Notebook&emsp;<img style=\"vertical-align:middle\" src=\"https://cap.cloud.sap/docs/assets/logos/sap.svg\" alt=\"drawing\" width=\"70\"/><img style=\"vertical-align:middle\" src=\"https://cap.cloud.sap/docs/assets/logos/cap.svg\" alt=\"drawing\" width=\"60\"/></h1>\n<body>\n<div class=\"alert info\">\n  <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span>\n  <strong>Info:</strong> Notebook code cells work just like your native environments. However, predefined *Magic commands* exist\n  to succinctly solve various common problems to make notebook workflows even simpler.\n  They all start with <code>%</code> or <code>%%</code> for line or cell magic commands.<br>\n  Type <code>%quickref</code> in any cell for a full list.\n</div>\n<p>\n<div class=\"alert warning\">\n  <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span>\n  <strong>Warning:</strong> When sharing notebooks, code cells <i>Shell Script</i>, <i>Terminal</i> may be executed on different shells.<br>\n  Keep that in mind and look for alternatives before using shell-specific commands.\n</div>\n<p>\n<div class=\"alert\">\n  <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span>\n  <strong>Danger:</strong> The cell types <i>Shell Script</i> and <i>Terminal</i> are executed in your native shell environment: <b>Please beware!</b>\n</div>\n<p>\n</body>\n</html>",
+        "outputs": []
+    },
+    {
+        "kind": 1,
+        "language": "markdown",
+        "value": "# The *Native Shell* cell\n\nThe *Native Shell* cell in your CAP Notebook is nothing other than your system's **default shell**:<br>\n\n- When executed, the command is run in an underlying (shell) subprocess (see [Single command](#single-command) example).\n- Can fire multiple commands from the same cell (split by new lines, see [Multiple commands](#multiple-commands) example).\n- Keep commands *system-agnostic* to keep Notebook shareable (i.e `ls || dir`).\n- Ideal for file navigation (i.e. `cd`, `find`, etc.), manipulation (i.e. `awk`, `sed`, `grep`, etc.) and *finite* CLI calls.\n- Output is returned to the CAP Notebook.\n\n## Examples\n\n### [Single command](#single-command)\n\nSimply write into the *Native Shell* code cell just like you would type into your shell and press the execute button.\n\nThe following cell prints `\"Hello, world!\"` on the output when executed:",
+        "outputs": []
+    },
+    {
+        "kind": 2,
+        "language": "shell",
+        "value": "echo \"Hello, world!\"",
+        "outputs": []
+    },
+    {
+        "kind": 1,
+        "language": "markdown",
+        "value": "### [Multiple commands](#multiple-commands)\n\nYou can also fire off multiple shell commands on one code cell by just starting a new line (equivalent to using `&&` in your underlying shell). The following cell demonstrates this via a simple example where the cell print the `\"Hello, world!\"` statements again, but using three separate commands:",
+        "outputs": []
+    },
+    {
+        "kind": 2,
+        "language": "shell",
+        "value": "echo -n \"Hello\"\necho -n \", \"\necho \"world!\"",
+        "outputs": []
+    }
+]
